@@ -1,0 +1,67 @@
+    
+    <bean class="converters.ActorToStringConverter" />
+	<bean class="converters.StringToActorConverter" />
+        
+    <bean class="converters.MessageToStringConverter" />
+	<bean class="converters.StringToMessageConverter" />
+        
+    <bean class="converters.FinderToStringConverter" />
+	<bean class="converters.StringToFinderConverter" />
+        
+    <bean class="converters.CommentToStringConverter" />
+	<bean class="converters.StringToCommentConverter" />
+        
+    <bean class="converters.CategoryToStringConverter" />
+	<bean class="converters.StringToCategoryConverter" />
+        
+    <bean class="converters.AdministratorToStringConverter" />
+	<bean class="converters.StringToAdministratorConverter" />
+        
+    <bean class="converters.ConferenceToStringConverter" />
+	<bean class="converters.StringToConferenceConverter" />
+        
+    <bean class="converters.ActivityToStringConverter" />
+	<bean class="converters.StringToActivityConverter" />
+        
+    <bean class="converters.PresentationToStringConverter" />
+	<bean class="converters.StringToPresentationConverter" />
+        
+    <bean class="converters.ConfigurationToStringConverter" />
+	<bean class="converters.StringToConfigurationConverter" />
+        
+    <bean class="converters.PanelToStringConverter" />
+	<bean class="converters.StringToPanelConverter" />
+        
+    <bean class="converters.TutorialToStringConverter" />
+	<bean class="converters.StringToTutorialConverter" />
+        
+    <bean class="converters.RegistrationToStringConverter" />
+	<bean class="converters.StringToRegistrationConverter" />
+        
+    <bean class="converters.SectionToStringConverter" />
+	<bean class="converters.StringToSectionConverter" />
+        
+    <bean class="converters.CreditCardToStringConverter" />
+	<bean class="converters.StringToCreditCardConverter" />
+        
+    <bean class="converters.AuthorToStringConverter" />
+	<bean class="converters.StringToAuthorConverter" />
+        
+    <bean class="converters.SponsorToStringConverter" />
+	<bean class="converters.StringToSponsorConverter" />
+        
+    <bean class="converters.ReviewerToStringConverter" />
+	<bean class="converters.StringToReviewerConverter" />
+        
+    <bean class="converters.PaperToStringConverter" />
+	<bean class="converters.StringToPaperConverter" />
+        
+    <bean class="converters.ReportsToStringConverter" />
+	<bean class="converters.StringToReportsConverter" />
+        
+    <bean class="converters.SubmissionsToStringConverter" />
+	<bean class="converters.StringToSubmissionsConverter" />
+        
+    <bean class="converters.SponsorshipToStringConverter" />
+	<bean class="converters.StringToSponsorshipConverter" />
+    

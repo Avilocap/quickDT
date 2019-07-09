@@ -1,0 +1,514 @@
+{
+    "Classes":[
+
+        {
+            "Name" : "Actor",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "name",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "middleName",
+                    "Type" : "String",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "surname",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "photo",
+                    "Type" : "String",
+                    "Constraint" : ["@URL"],
+                    "Display" : false
+                },
+                {
+                    "Name" : "email",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank","@URL"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "phone",
+                    "Type" : "String",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "address",
+                    "Type" : "String",
+                    "Constraint" : [],
+                    "Display" : true
+                }
+            ]
+
+        },
+        {
+            "Name" : "Message",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "sendDate",
+                    "Type" : "Date",
+                    "Constraint" : ["@Past"],
+                    "Display" : true
+                },{
+                    "Name" : "subject",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },{
+                    "Name" : "body",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },{
+                    "Name" : "topic",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                }
+                
+            ]
+
+        },
+        {
+            "Name" : "Finder",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "keyowrd",
+                    "Type" : "String",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "startDate",
+                    "Type" : "Date",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "endDate",
+                    "Type" : "Date",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "maximumFee",
+                    "Type" : "String",
+                    "Constraint" : [],
+                    "Display" : true
+                }
+                
+            ]
+
+        },
+        {
+            "Name" : "Comment",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "title",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "moment",
+                    "Type" : "Date",
+                    "Constraint" : ["@Past"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "text",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                }
+                
+            ]
+
+        },
+        {
+            "Name" : "Category",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "title",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                }
+                
+            ]
+
+        },
+        {
+            "Name" : "Administrator",
+            "Extend" : "Actor",
+            "Properties": []
+        },
+        {
+            "Name" : "Conference",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "title",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "acronym",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "venue",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "submissionDeadline",
+                    "Type" : "Date",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "notificationDeadline",
+                    "Type" : "Date",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "camera_readyDeadline",
+                    "Type" : "Date",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "startDate",
+                    "Type" : "Date",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "endDate",
+                    "Type" : "Date",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "summary",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "fee",
+                    "Type" : "Double",
+                    "Constraint" : ["@Range(min = 0.0)"],
+                    "Display" : true
+                }
+            ]
+
+        },
+        {
+            "Name" : "Activity",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "title",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "speakers",
+                    "Type" : "List<String>",
+                    "Constraint" : ["@ElementCollection","@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "startDate",
+                    "Type" : "Date",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "duration",
+                    "Type" : "Double",
+                    "Constraint" : ["@Range(min = 0.0)"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "room",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "summary",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "attachment",
+                    "Type" : "List<String>",
+                    "Constraint" : ["@ElementCollection","@URL"],
+                    "Display" : true
+                }
+                
+            ]
+
+        },
+        {
+            "Name" : "Presentation",
+            "Extend" : "DomainEntity",
+            "Properties": []
+        },
+        {
+            "Name" : "Configuration",
+            "Extend" : "DomainEntity",
+            "Properties": []
+        },
+        {
+            "Name" : "Panel",
+            "Extend" : "DomainEntity",
+            "Properties": []
+        },
+        {
+            "Name" : "Tutorial",
+            "Extend" : "DomainEntity",
+            "Properties": []
+        },
+        {
+            "Name" : "Registration",
+            "Extend" : "DomainEntity",
+            "Properties": []
+        },
+        {
+            "Name" : "Section",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "title",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "summary",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "picture",
+                    "Type" : "List<String>",
+                    "Constraint" : ["@ElementCollection","@URL"],
+                    "Display" : true
+                }
+                
+            ]
+
+        },
+        {
+            "Name" : "CreditCard",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "holder",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "number",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "brand",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "expiration",
+                    "Type" : "Date",
+                    "Constraint" : ["@NotNull"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "CVV",
+                    "Type" : "Integer",
+                    "Constraint" : ["@NotNull","@Range(min = 100,max=999)"],
+                    "Display" : true
+                }
+                
+                
+            ]
+
+        },
+        {
+            "Name" : "Author",
+            "Extend" : "Actor",
+            "Properties": []
+        },
+        {
+            "Name" : "Sponsor",
+            "Extend" : "Actor",
+            "Properties": []
+        },
+        {
+            "Name" : "Reviewer",
+            "Extend" : "Actor",
+            "Properties": [
+                {
+                    "Name" : "keyword",
+                    "Type" : "List<String>",
+                    "Constraint" : ["@ElementCollection", "@URL"],
+                    "Display" : true
+                }
+
+            ]
+        },
+        {
+            "Name" : "Paper",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "title",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "summary",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "document",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank","@URL"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "cameraReady",
+                    "Type" : "Boolean",
+                    "Constraint" : ["@NotNull"],
+                    "Display" : true
+                }
+                
+                
+            ]
+
+        },
+        {
+            "Name" : "Reports",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "decision",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "comments",
+                    "Type" : "List<String>",
+                    "Constraint" : [],
+                    "Display" : true
+                },
+                {
+                    "Name" : "originalityScore",
+                    "Type" : "Double",
+                    "Constraint" :["@Range(min = 0.0, max = 10.0)"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "qualityScore",
+                    "Type" : "Double",
+                    "Constraint" :["@Range(min = 0.0, max = 10.0)"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "redabilityScore",
+                    "Type" : "Double",
+                    "Constraint" :["@Range(min = 0.0, max = 10.0)"],
+                    "Display" : true
+                }
+                
+                
+            ]
+
+        },
+        {
+            "Name" : "Submissions",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "ticker",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "moment",
+                    "Type" : "Date",
+                    "Constraint" : ["@Past"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "status",
+                    "Type" : "String",
+                    "Constraint" :["@NotBlank"],
+                    "Display" : true
+                }
+                
+                
+            ]
+
+        },
+        {
+            "Name" : "Sponsorship",
+            "Extend" : "DomainEntity",
+            "Properties": [
+                {
+                    "Name" : "banner",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank","@URL"],
+                    "Display" : true
+                },
+                {
+                    "Name" : "targetURL",
+                    "Type" : "String",
+                    "Constraint" : ["@NotBlank","@URL"],
+                    "Display" : true
+                }
+                
+                
+            ]
+
+        }
+
+
+    ]
+
+
+}
