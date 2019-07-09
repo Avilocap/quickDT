@@ -8,8 +8,6 @@ from generators.viewsGenerator import createViews
 from generators.convertersGenerator import createConverters
 from generators.createMisc import createMisc
 
-# f = open("Entities.txt", "r")
-
 f = open("Entities.json", "r")
 content = f.read()
 jsondecoded = json.loads(content)
@@ -35,4 +33,4 @@ for entity in jsondecoded["Classes"]:
     createViews(entity)
     createMisc(clase)
 
-print("Importación realizada correctamente")
+print("Generation succesful!")
